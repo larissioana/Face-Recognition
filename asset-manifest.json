@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/larissioana/Face-Recognition/static/js/main.9520e602.js",
-    "static/js/787.3126e179.chunk.js": "/larissioana/Face-Recognition/static/js/787.3126e179.chunk.js",
-    "index.html": "/larissioana/Face-Recognition/index.html",
-    "main.9520e602.js.map": "/larissioana/Face-Recognition/static/js/main.9520e602.js.map",
-    "787.3126e179.chunk.js.map": "/larissioana/Face-Recognition/static/js/787.3126e179.chunk.js.map"
+    "main.js": "/Face-Recognition/static/js/main.37bbf989.js",
+    "static/js/787.3126e179.chunk.js": "/Face-Recognition/static/js/787.3126e179.chunk.js",
+    "index.html": "/Face-Recognition/index.html",
+    "main.37bbf989.js.map": "/Face-Recognition/static/js/main.37bbf989.js.map",
+    "787.3126e179.chunk.js.map": "/Face-Recognition/static/js/787.3126e179.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.9520e602.js"
+    "static/js/main.37bbf989.js"
   ]
 }
