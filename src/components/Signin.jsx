@@ -6,21 +6,27 @@ class Signin extends Component{
         super(props);
         this.state = {
             signInEmail: "",
-            signInPassword: ""
+            signInPassword: "",
+            userMsg: "",
         }
     }
 
     onEmailChange = (event) => {
+        this.setState({userMsg: ""});
         this.setState({signInEmail: event.target.value})
+        
     };
 
     onPasswordChange = (event) => {
+        this.setState({userMsg: ""});
         this.setState({signInPassword: event.target.value})
     };
 
     onSubmitSignIn = (e) => {
         e.preventDefault();
-   
+        if(this.state.signInEmail || this.state.signInPassword === ""){
+           this.setState({userMsg:'Please fill in the fields'})
+        } 
     fetch('https://shrouded-sands-71043.herokuapp.com/signin',{
         method:'post',
         headers: {'Content-Type': 'application/json'},
@@ -30,7 +36,9 @@ class Signin extends Component{
         })
     })
     .then(response => response.json())
+
     .then(user => {
+        console.log(user)
         if(user.id) {
             this.props.loadUser(user);
             this.props.onRouteChange('home');
@@ -46,12 +54,15 @@ class Signin extends Component{
         <Wrapper>
          <Form>
             <h2>Sign In</h2>
+            <p className="account-text">Don't have an account?</p>
+            <p onClick={() => onRouteChange('register')} className="register">Create an account here</p>
             <label htmlFor="email">Email</label>
-            <input onChange={this.onEmailChange} type='email' required/>
+            <input placeholder="Email" onChange={this.onEmailChange} type='email' required/>
             <label htmlFor="password">Password</label>
-            <input onChange={this.onPasswordChange} type='password' required/>
+            <input placeholder="Password" onChange={this.onPasswordChange} type='password' required/>
+            <p className="userMsg">{this.state.userMsg}</p>
             <button onClick={this.onSubmitSignIn}>Sign in</button>
-            <p onClick={() => onRouteChange('register')}>Register</p>
+          
          </Form>
         </Wrapper>
     )
@@ -74,6 +85,7 @@ export const Form = styled.form`
     box-shadow: 2px 0px 5px  #7e7a7a;
     border-radius: .5rem;
     padding:2rem;
+
     h2{
         text-align: center;
         margin-bottom:2rem;
@@ -83,6 +95,7 @@ export const Form = styled.form`
     label{
         margin-bottom:.5rem;
         font-size:clamp(1rem, 2vw, 1.2rem);
+       
         font-weight:bolder;
     }
     input{
@@ -94,7 +107,11 @@ export const Form = styled.form`
             background: black;
             color:white;
         }
+        &::placeholder{
+            color:#17181a;
+        }
     }
+
     button{
         width:10rem;
         background:none;
@@ -107,10 +124,22 @@ export const Form = styled.form`
             transform:scale(1.05);
         }
     }
-    p{
-        margin-top: 2rem;
+
+    .register{
+        margin-top: 1rem;
+        margin-bottom:2rem;
         font-weight: bolder;
         cursor: pointer;
+     }
+
+     .account-text{
+        font-size:1.1rem;
+     }
+
+     .userMsg{
+        margin-bottom:1rem;
+        color: #040405;
+        font-weight: bolder;
      }
 
     @media (max-width: 950px){

@@ -142,8 +142,6 @@ class App extends Component {
         loadUser={this.loadUser}/>
         </div>
        )
-        
-       
       }
      
     </div>

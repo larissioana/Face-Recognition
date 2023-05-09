@@ -8,22 +8,29 @@ class Register extends Component{
             email: "",
             password: "",
             name: "",
+            userMsg: ""
         }
     }
     onNameChange = (event) => {
+        this.setState({userMsg: ""})
         this.setState({name: event.target.value})
     };
 
     onEmailChange = (event) => {
+        this.setState({userMsg: ""})
         this.setState({email: event.target.value})
     };
 
     onPasswordChange = (event) => {
+        this.setState({userMsg: ""})
         this.setState({password: event.target.value})
     };
 
     onSubmitSignIn = (e) => {
         e.preventDefault();
+        if(this.state.email || this.state.name || this.state.password === ""){
+            this.setState({userMsg: "Please fill in the fields"})
+        }
         fetch('https://shrouded-sands-71043.herokuapp.com/register',{
             method:'post',
             headers: {'Content-Type': 'application/json'},
@@ -50,11 +57,12 @@ class Register extends Component{
          <Form>
             <h2>Register</h2>
             <label htmlFor="name">Name</label>
-            <input type='text' required onChange={this.onNameChange} />
+            <input placeholder='Name - Surname' type='text' required onChange={this.onNameChange} />
             <label htmlFor="email">Email</label>
-            <input type='email' required onChange={this.onEmailChange} />
+            <input placeholder='Email' type='email' required onChange={this.onEmailChange} />
             <label htmlFor="password">Password</label>
-            <input type='password' required onChange={this.onPasswordChange}/>
+            <input placeholder="Password" type='password' required onChange={this.onPasswordChange}/>
+            <p className='userMsg'>{this.state.userMsg}</p>
             <button onClick={this.onSubmitSignIn}>Register</button>
          </Form>
         </Wrapper>
