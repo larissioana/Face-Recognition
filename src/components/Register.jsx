@@ -57,7 +57,7 @@ class Register extends Component{
    
     return (
         <Wrapper>
-         <Form>
+         <Form onSubmit={this.onSubmitSignIn}>
             <h2>Register</h2>
             <label htmlFor="name">Name</label>
             <input placeholder='Name - Surname' type='text' required onChange={this.onNameChange} />
@@ -65,7 +65,7 @@ class Register extends Component{
             <input required placeholder='Email' type='email'  onChange={this.onEmailChange} />
             <label htmlFor="password">Password</label>
             <input placeholder="Password" type='password' required onChange={this.onPasswordChange}/>
-            <button type='submit' onClick={this.onSubmitSignIn}>Register</button>
+            <button >Register</button>
          </Form>
         </Wrapper>
     )
