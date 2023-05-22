@@ -7,19 +7,17 @@ class Signin extends Component{
         this.state = {
             signInEmail: "",
             signInPassword: "",
-            userMsg: "",
+            
         }
     }
 
     onEmailChange = (event) => {
-        this.setState({userMsg: ""});
-        this.setState({signInEmail: event.target.value})
+     this.setState({signInEmail: event.target.value})
         
     };
 
     onPasswordChange = (event) => {
-        this.setState({userMsg: ""});
-        this.setState({signInPassword: event.target.value})
+    this.setState({signInPassword: event.target.value})
     };
 
     onSubmitSignIn = (e) => {
@@ -36,11 +34,6 @@ class Signin extends Component{
     .then(response => response.json())
 
     .then(user => {
-        if(this.state.signInEmail && this.state.signInPassword === ""){
-            this.setState({userMsg:'Please fill in the fields'})
-        } else {
-            this.setState({})
-        }
         if(user.id) {
             this.props.loadUser(user);
             this.props.onRouteChange('home');
@@ -55,7 +48,7 @@ class Signin extends Component{
     const {onRouteChange} = this.props;
     return (
         <Wrapper>
-         <Form onSubmit={this.onSubmitSignIn}>
+         <Form>
             <h2>Sign In</h2>
             <p className="account-text">Don't have an account?</p>
             <p onClick={() => onRouteChange('register')} className="register">Create an account here</p>
@@ -63,7 +56,7 @@ class Signin extends Component{
             <input placeholder="Email" onChange={this.onEmailChange} type='email' required/>
             <label htmlFor="password">Password</label>
             <input placeholder="Password" onChange={this.onPasswordChange} type='password' required/>
-            <button>Sign in</button>
+            <button type='submit' onClick={this.onSubmitSignIn}>Sign in</button>
           
          </Form>
         </Wrapper>
