@@ -28,6 +28,7 @@ class Register extends Component{
 
     onSubmitSignIn = (e) => {
         e.preventDefault();
+        this.setState({userMsg: ""})
         if(this.state.email && this.state.name && this.state.password === ""){
             this.setState({userMsg: "Please fill in the fields"})
         } 
