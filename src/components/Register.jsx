@@ -66,7 +66,7 @@ class Register extends Component{
             <label htmlFor="password">Password</label>
             <input placeholder="Password" type='password' required onChange={this.onPasswordChange}/>
             <p className='userMsg'>{this.state.userMsg}</p>
-            <button onClick={this.onSubmitSignIn}>Register</button>
+            <button type='submit' onSubmit={this.onSubmitSignIn}>Register</button>
          </Form>
         </Wrapper>
     )

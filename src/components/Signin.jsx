@@ -39,7 +39,7 @@ class Signin extends Component{
         if(this.state.signInEmail && this.state.signInPassword === ""){
             this.setState({userMsg:'Please fill in the fields'})
         } else {
-            this.setState({userMsg: ""})
+            this.setState({})
         }
         if(user.id) {
             this.props.loadUser(user);
@@ -64,7 +64,7 @@ class Signin extends Component{
             <label htmlFor="password">Password</label>
             <input placeholder="Password" onChange={this.onPasswordChange} type='password' required/>
             <p className="userMsg">{this.state.userMsg}</p>
-            <button onClick={this.onSubmitSignIn}>Sign in</button>
+            <button type="submit" onSubmit={this.onSubmitSignIn}>Sign in</button>
           
          </Form>
         </Wrapper>
