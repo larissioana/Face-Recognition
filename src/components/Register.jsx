@@ -28,9 +28,9 @@ class Register extends Component{
 
     onSubmitSignIn = (e) => {
         e.preventDefault();
-        if(this.state.email || this.state.name || this.state.password === ""){
+        if(this.state.email && this.state.name && this.state.password === ""){
             this.setState({userMsg: "Please fill in the fields"})
-        }
+        } 
         fetch('https://shrouded-sands-71043.herokuapp.com/register',{
             method:'post',
             headers: {'Content-Type': 'application/json'},

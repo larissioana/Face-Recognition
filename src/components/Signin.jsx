@@ -24,9 +24,6 @@ class Signin extends Component{
 
     onSubmitSignIn = (e) => {
         e.preventDefault();
-        if(this.state.signInEmail || this.state.signInPassword === ""){
-           this.setState({userMsg:'Please fill in the fields'})
-        } 
     fetch('https://shrouded-sands-71043.herokuapp.com/signin',{
         method:'post',
         headers: {'Content-Type': 'application/json'},
@@ -38,11 +35,14 @@ class Signin extends Component{
     .then(response => response.json())
 
     .then(user => {
-        console.log(user)
+        if(this.state.signInEmail && this.state.signInPassword === ""){
+            this.setState({userMsg:'Please fill in the fields'})
+        } else {
         if(user.id) {
             this.props.loadUser(user);
             this.props.onRouteChange('home');
-        }
+        } 
+    }
     })
    
     };
