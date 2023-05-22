@@ -63,7 +63,6 @@ class Signin extends Component{
             <input placeholder="Email" onChange={this.onEmailChange} type='email' required/>
             <label htmlFor="password">Password</label>
             <input placeholder="Password" onChange={this.onPasswordChange} type='password' required/>
-            <p className="userMsg">{this.state.userMsg}</p>
             <button type="submit" onSubmit={this.onSubmitSignIn}>Sign in</button>
           
          </Form>
@@ -137,12 +136,6 @@ export const Form = styled.form`
 
      .account-text{
         font-size:1.1rem;
-     }
-
-     .userMsg{
-        margin-bottom:1rem;
-        color: #040405;
-        font-weight: bolder;
      }
 
     @media (max-width: 950px){

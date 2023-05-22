@@ -6,11 +6,18 @@ export const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing:border-box;
 }
+
+:root{
+  scrollbar-width: none;
+ }
+ 
 body{
     font-family: 'Courier New', Courier, monospace;
     overflow-x:hidden;
     background:linear-gradient(89deg, #9D94FF 0%, #FFCC8A 100%);
 }
+
+
 button{
     cursor: pointer;
     font-family: 'Courier New', Courier, monospace;
