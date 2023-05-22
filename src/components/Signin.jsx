@@ -63,7 +63,7 @@ class Signin extends Component{
             <input placeholder="Email" onChange={this.onEmailChange} type='email' required/>
             <label htmlFor="password">Password</label>
             <input placeholder="Password" onChange={this.onPasswordChange} type='password' required/>
-            <button type="submit" onSubmit={this.onSubmitSignIn}>Sign in</button>
+            <button type="submit" onClick={this.onSubmitSignIn}>Sign in</button>
           
          </Form>
         </Wrapper>
