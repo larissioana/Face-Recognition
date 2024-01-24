@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/Face-Recognition/static/js/main.6e37eb1d.js",
+    "main.js": "/Face-Recognition/static/js/main.b5728dd4.js",
     "static/js/787.3126e179.chunk.js": "/Face-Recognition/static/js/787.3126e179.chunk.js",
     "index.html": "/Face-Recognition/index.html",
-    "main.6e37eb1d.js.map": "/Face-Recognition/static/js/main.6e37eb1d.js.map",
+    "main.b5728dd4.js.map": "/Face-Recognition/static/js/main.b5728dd4.js.map",
     "787.3126e179.chunk.js.map": "/Face-Recognition/static/js/787.3126e179.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.6e37eb1d.js"
+    "static/js/main.b5728dd4.js"
   ]
 }
