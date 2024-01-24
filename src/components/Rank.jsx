@@ -5,7 +5,7 @@ const Rank = ({name, entries}) =>
     return (
         <Wrapper>
             <div>
-                {`${name}, your current entry is...`}
+                {`${name} your current entry is...`}
             </div>
             <div>
                 {entries}
