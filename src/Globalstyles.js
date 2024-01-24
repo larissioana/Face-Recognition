@@ -1,24 +1,27 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root{
-  scrollbar-width: none;
- }
+:root
+{
+   scrollbar-width: none;
+}
  
-body{
+body
+{
     font-family: 'Courier New', Courier, monospace;
-    overflow-x:hidden;
+    overflow-x: hidden;
     background:linear-gradient(89deg, #9D94FF 0%, #FFCC8A 100%);
 }
 
-
-button{
+button
+{
     cursor: pointer;
     font-family: 'Courier New', Courier, monospace;
 }
